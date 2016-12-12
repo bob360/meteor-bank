@@ -1,0 +1,242 @@
+<template name="bank">
+    <div id="bg">
+        <div>
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <img src="images/back.jpg" alt=""/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<br><br><br>
+{{> banktrans}} {{> pretbank}} {{> paydet}}  {{> depot}} {{> transfer}} 
+</template>
+
+<template name="banktrans">
+{{#if warning}}
+
+<br><br><br><div id="transmenu" align="center">
+<h2>{{_ "problem"}}</h2> <br>
+    <h3>{{_ "problem1"}}<br>
+        {{_ "problem2"}}<br>
+        {{_ "problem3"}}<br>
+        {{_ "problem4"}}<br>
+    </h3>
+</div>
+{{/if}}
+ 
+{{#if viewon}}
+  <br><br><br>
+<div class="container">
+     <p align="center">
+           <div class="push_button blue" id="prete" type="submit"> {{_ "bank1"}}
+
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button red" id="paydet" type="submit"> {{_ "bank2"}}
+
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button purple" id="transfer" type="submit"> {{_ "bank3"}}
+
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button green" id="bank" type="submit"> {{_ "bank4"}}
+
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button steelblue" id="depot" type="submit"> {{_ "bank5"}}
+
+     </div>
+      </p>
+     <p align="center">
+  <div class="push_button purple" id="sevis" type="submit"> {{_ "bank6"}}&nbsp;&nbsp;({{geoloc}})
+
+     </div>
+      </p>
+
+
+
+</div>
+{{/if}}
+</template>
+<template name="pretbank">
+
+{{#if procpretbank}}
+
+<br><br><br><br><div class="container" align="left">
+<div id="transmenu" align="center">
+<form role="form" align="center">
+
+  <table align="center">
+<tr>
+<th>{{_ "bank7"}}</th>
+<th>{{_ "bank8"}}</th>
+<th>{{_ "bank9"}}</th>
+<th>{{_ "bank10"}}</th>
+</tr>
+<tr>
+<td>
+        <input type="text" size="8"  value="{{loanper}}" >
+</td>
+<td>
+	<input type="text" size="7" value="{{interest}}">
+</td>
+<td>
+	<input type="text" size="11" value="{{service}}">
+</td>
+<td>
+	<input type="text" size="6" value="{{balance}}">
+</td>
+</tr>
+</table>
+      <strong>{{_ "bank11"}}</strong>
+	<h5>{{_ "bank12"}} <br>
+            {{_ "bank13"}}</h5>
+
+<div class="form-group">
+	<div class="submit-div">
+     <p align="center">
+           <div class="push_button blue" id="form-dako" type="submit"> {{_ "bank14"}}
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button retour" id="form-nonmesi" type="submit"> {{_ "bank15"}}
+
+     </div>
+      </p>
+
+        </div>
+</div>
+</form>
+</div>
+</div>
+{{/if}}
+
+</template>
+
+<template name="paydet">
+{{#if procpaydet}}
+<br><br><br><br><div id="transmenu" align="center">
+<form role="form" align="center"> 
+	<div align=center>
+		<label for="detver">
+		<h4>{{_ "bank16"}}</h4>
+                <h5>{{_ "bank17"}}{{detactual}}</h5>
+		</label>
+	<div align=center>	
+<input type="text" id="detver" style="font-size:18pt;height:40px;width:200px;" value="" class="form-control" use data-required="true">
+	</div>
+  </div>
+<div class="form-group">
+	<div class="submit-div">
+     <p align="center">
+           <div class="push_button blue" id="form-versement" type="submit"> {{_ "executer"}}
+
+     </div>
+      </p>
+
+     <p align="center">
+           <div class="push_button retour" id="form-noversement" type="submit"> {{_ "retour"}}
+
+     </div>
+      </p>
+
+        </div>
+</div>
+</form>
+</div>
+{{/if}}
+</template>
+
+<template name="depot">
+{{#if depot}}
+<br><br><br><br><div id="transmenu" align="center">
+<form role="form" align="center">
+<h3>{{_ "bank18"}}<br>
+{{_ "bank19"}}<br>
+{{_ "bank20"}}</h3> <br>
+
+	<div class="form-group">
+		<label for="cel">
+		<h4>{{_ "mobile5"}}</h4>
+		</label>
+	     <div align="center">
+<input type="text" id="cellnum" style="font-size:18pt;height:40px;width:200px;" value="" class="form-control" placeholder="Ex.34567889" data-required="true" autofocus>
+             </div>
+        </div>
+  <div class="form-group">
+		<label for="lajandepot">
+		<h4>{{_ "valeur"}}</h4>
+		</label>
+	<div align=center>
+<input type="text" id="lajandepot" style="font-size:18pt;height:40px;width:200px;" value="" class="form-control" data-required="true">
+	</div>
+  </div>
+     <p align="center">
+           <div class="push_button blue" id="form-depot" type="submit">{{_ "bank21"}} 
+
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button retour" id="form-kitesa" type="submit"> {{_ "retour"}}
+
+     </div>
+      </p>
+
+</form>
+</div>
+{{/if}}
+</template>
+
+<template name="transfer">
+{{#if transfer}}
+<br><br><br><br><div id="transmenu" align="center">
+<form role="form" align="center">
+       <p align="center">
+	<div class="form-group">
+		<label for="cel">
+		{{_ "mobile1"}}
+		</label>
+        </div>
+	<div>
+<input type="text" id="cellnum" value="" style="font-size:18pt;height:40px;width:200px;" class="form-control" placeholder="Ex.34567889" data-required="true" autofocus>
+	</div>
+       </p>
+        <p align=center>
+     <div class="form-group">
+	<label for="lajan">
+	{{_ "valeur"}}
+	</label>
+     </div>
+      <div>
+<input type="text" id="lajan" style="font-size:18pt;height:40px;width:200px;" value="" class="form-control" data-required="true">
+      </div>
+        </p>
+
+			<div class="form-group">
+				<div class="submit-div">
+     <p align="center">
+           <div class="push_button purple" id="form-retrait" type="submit"> {{_ "executer"}} 
+
+     </div>
+      </p>
+     <p align="center">
+           <div class="push_button retour" id="form-cancel-retrait" type="submit"> {{_ "retour"}}
+
+     </div>
+      </p>
+
+				</div>
+</div>
+</form>
+</div>
+{{/if}}
+</template>
+

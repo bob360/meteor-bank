@@ -1,0 +1,122 @@
+ <template name="contacto">
+<html> 
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="content-type" content="text/html;" />
+	<meta name="robots" content="index,follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">
+	<!-- Open Graph -->
+	<meta property="og:title" content="View Selected Image Before Upload" />
+	<meta property="og:image" content="http://ns2.techstream.org/images/Techstream-Bits-Javascript.jpg" />
+	<meta property="og:site_name" content="Tech Stream" />
+	<meta property="og:description" content="It will be a good user experience if you can show the user how the image they are gonna upload will look like in your system before they start uploading."/>
+	<meta property="og:type" content="article">
+
+	<link rel="publisher" href="https://plus.google.com/109470966265063246951">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/grid.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/demo.css" media="all">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div id="cont" >
+  	<div id="box">
+		<div class="row" id="title_row">
+	               <div class="col-md-05">
+		 
+                 <h3>{{_ "hello"}} {{userFullName}}</h3>
+                <h4> {{_ "contact1"}}<br>
+                 {{_ "contact2"}}<br>{{_ "contact3"}}<br>{{_ "contact4"}}<br>
+                 {{_ "contact5"}}<br>{{_ "contact6"}}<br>{{_ "contact7"}}<br>
+                </h4>
+                 <h3>{{_ "contact8"}}</h3>
+                       </div>
+                </div>
+ <form enctype="multipart/form-data">
+	<div class="row">
+        	<div class="column-small-12 padd0 align-center">
+
+                   <div id="drop-box ">
+                      <p>{{_ "choice"}}<br/></p>
+                   </div>
+
+                      <p> id="errors"</p>
+                </div> 
+                <div class="column-small-12 padd0">
+													    
+        <input type="file" name="files" id="uploadfile">
+                     <div class="submit-div">
+		<button type="button" class="btn btn-success pull-right new-file">
+			<span class="fa fa-plus">
+			</span>
+			{{_ "contact10"}}
+		</button> 
+ 
+                     </div>
+
+                </div>
+       
+         </div>
+
+ 	<div id="contacto-form" class="">
+		
+
+			<div class="form-group  field-text">
+				<label for="text">
+					{{_ "contact11"}}
+				</label>
+				<div class="input-div">
+              <input type="hidden" name="fname" value= "{{userFullName}}">
+              <input type="hidden" name="email" value= "{{userEmail}}">
+              <textarea class="form-control" name="text"></textarea>
+
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				 </div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<button id="form-submit-button" class="btn btn-lg btn-primary btn-block" type="submit">
+						<span class="fa fa-check">
+						</span>
+						{{_ "contact9"}}
+					</button>
+				</div>
+			</div>
+           </div>
+		</form>
+                     {{_ "donate"}}
+</div>
+</div>
+
+  <div id="bg">
+        <div>
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <img src="images/graph3.jpeg" alt=""/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+  </div>
+
+</body>
+
+</html>
+</template>
+
+
+
+
+
+

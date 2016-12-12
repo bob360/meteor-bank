@@ -1,0 +1,66 @@
+<template name= "contacto">
+<html>
+<head>
+
+</head>
+<body>
+    <div id="cont" >
+  	<div id="box">
+		<div class="row" id="title_row">
+	               <div class="col-md-05">
+		 
+                 <h3>{{_ "hello"}} {{userFullName}}</h3>
+                <h4> {{_ "contact1"}}<br>
+                 {{_ "contact2"}}<br>{{_ "contact3"}}<br>{{_ "contact4"}}<br>
+                 {{_ "contact5"}}<br>{{_ "contact6"}}<br>{{_ "contact7"}}<br>
+                </h4>
+                 <h3>{{_ "contact8"}}</h3>
+                       </div>
+                </div>
+
+<form id="form1" runat="server">
+    <input type='file' id="imgInp" placeholder="click"/>
+    <img id="blah" src="#" alt=""  style="width:62px;height:62px;border:0;"/>
+
+                     <div class="submit-div">
+		<button type="button" id="sendpic" class="btn btn-success pull-center new-file">
+
+			{{_ "contact10"}}
+		</button> 
+ 
+              <input type="hidden" id="progress_bar" value="progress_bar">
+                     </div>
+</form>
+
+        <form>
+            <div class="col-sm-6">
+                <input class="form-control" type="hidden" name="contact-name" id="contact-name" value="{{userFullName}}"/>
+            </div>
+            <div class="col-sm-6">
+                
+                <input class="form-control" type="hidden" name="contact-email" id="contact-email" value="{{userEmail}}"/>
+            </div>
+            <div class="col-sm-6">
+ 
+   <input class="form-control" type="hidden" name="contact-subject" id="contact-subject" value="Brujo contact request"/>
+           </div>
+            <div class="col-xs-12">
+              
+                <textarea class="form-control" rows="6" name="contact-message" id="contact-message"></textarea>
+            </div>
+            <div class="col-xs-12 text-left">
+                <br>
+                <button type="form-submit-button" id="sendnote" class="btn btn-success">{{_ "contact9"}}</button>
+                <button type="submit" id="form-cancel" class="btn btn-success">Cancel</button>
+
+                <br>
+                <br>
+            </div>
+        </form>
+</div>
+  {{_ "donate"}}
+
+</div>
+</body>
+</html>
+</template>
